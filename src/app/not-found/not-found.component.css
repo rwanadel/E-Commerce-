@@ -1,0 +1,12 @@
+.maincolor{
+  background-color: #e4b9a4;
+  }
+  .mainborder{
+  border: 2px solid #e4b9a4 ;
+  }
+  .mainhover:hover{
+  background-color: #d6a68e;
+  }
+  .color{
+  color:#d6a68e
+  }

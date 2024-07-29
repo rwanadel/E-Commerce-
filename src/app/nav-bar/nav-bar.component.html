@@ -1,0 +1,39 @@
+<nav
+  style="height: 80px; z-index: 100"
+  class="navbar navback position-sticky top-0"
+>
+  <div class="container-fluid">
+    <a
+      class="navbar-brand mx-5 fs-3 fw-bold"
+      routerLinkActive="activeLink"
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Products</a
+    >
+    <div class="d-flex">
+      <a
+        class="mx-4 text-decoration-none text-dark fs-5"
+        routerLinkActive="activeLink"
+        routerLink="/login"
+        >Login</a
+      >
+      <a
+        class="mx-4 text-decoration-none text-dark fs-5"
+        routerLinkActive="activeLink"
+        routerLink="/regester"
+        >Regester</a
+      >
+      <a
+        class="mx-4 text-decoration-none text-dark fs-5"
+        routerLinkActive="activeLink"
+        routerLink="/cart"
+        ><i class="fa-solid fa-cart-shopping"></i>
+        <span
+          style="width: 22px; height: 20px; font-size: 15px"
+          class="maincolor rounded-circle px-2 position-absolute top-0 star-0 mt-1 text-light"
+          >{{ cartQuantity }}</span
+        ></a
+      >
+    </div>
+  </div>
+</nav>

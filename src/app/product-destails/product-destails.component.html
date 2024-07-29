@@ -1,0 +1,97 @@
+<div class="card mt-5 mainborder" style="max-width: 75%; margin: auto">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        [src]="productDetails?.images"
+        class="img-fluid rounded-start navback h-100"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ productDetails?.title }}</h5>
+        <p class="card-text">{{ productDetails?.description }}</p>
+        <div class="star-rating d-block m-1">
+          <i
+            *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+            class="star"
+            [ngClass]="{ filled: i < productDetails?.rating }"
+          >
+            &#9733;
+          </i>
+        </div>
+        <hr />
+        <div class="fs-4 fw-bold">
+          <p
+            [innerHTML]="
+              productDetails.price
+                | discount : productDetails.discountPercentage
+            "
+          ></p>
+        </div>
+
+        <hr />
+        @if(productDetails?.stock){
+        <p
+          class="rounded-pill greenback text-center text-light m-2"
+          style="width: 100px"
+        >
+          in stock
+        </p>
+        }@else {
+        <p
+          class="rounded-pill redback text-center text-light m-2"
+          style="width: 110px"
+        >
+          out of stock
+        </p>
+        }
+        <span>More information</span>
+        <div class="my-3">
+          <span class="bg-light px-4 py-1 rounded-pill me-2">{{
+            productDetails?.category
+          }}</span
+          ><span class="bg-light px-4 py-1 rounded-pill">{{
+            productDetails?.brand
+          }}</span>
+        </div>
+        <hr />
+        <div class="d-flex">
+          <div class="rounded-pill" style="display: flex; align-items: center">
+            <button
+              class="border-0 bg-light rounded-start text-dark"
+              (click)="decreaseQuantity()"
+            >
+              -
+            </button>
+            <p
+              style="width: 50px; text-align: center"
+              class="border-0 mt-3 bg-light text-dark"
+            >
+              {{ counter }}
+            </p>
+            <button
+              class="bg-light rounded-end border-0 text-dark"
+              (click)="increaseQuantity()"
+            >
+              +
+            </button>
+          </div>
+
+          <p class="ms-5">
+            Only
+            <span class="color">{{ productDetails?.stock }} iteams</span> Left !
+            Don't miss it.
+          </p>
+        </div>
+
+        <button
+          class="btn maincolor mainhover text-light mt-3"
+          (click)="addToCart()"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

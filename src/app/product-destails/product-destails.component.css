@@ -1,0 +1,35 @@
+.greenback{
+  background-color: green;
+
+  }
+  .redback{
+  background-color: red;
+  }
+
+  .star-rating {
+    display: inline-block;
+  }
+
+  .star {
+    font-size: 16px;
+    color: lightgray;
+  }
+
+  .star.filled {
+    color: green;
+  }
+  .maincolor{
+    background-color: #e4b9a4;
+    }
+    .mainborder{
+    border: 2px solid #e4b9a4 ;
+    }
+    .mainhover:hover{
+    background-color: #d6a68e;
+    }
+    .color{
+    color:#d6a68e
+    }
+    .navback{
+      background-color: #fffbf9;
+      }
