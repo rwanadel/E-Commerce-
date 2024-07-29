@@ -1,7 +1,10 @@
-<div class=" p-5" *ngIf="cartProducts.length > 0">
+<div class="p-5" *ngIf="cartProducts.length > 0">
   <h3 class="m-5 color">Cart</h3>
   <div *ngFor="let product of cartProducts">
-    <div class="card mb-3 mainborder mx-auto mb-5 mt-5" style="max-width: 700px">
+    <div
+      class="card mb-3 mainborder mx-auto mb-5 mt-5"
+      style="max-width: 700px"
+    >
       <div class="row g-0">
         <div class="col-md-4">
           <img
@@ -26,10 +29,7 @@
                   >quentity : {{ product?.quantity }}</small
                 >
               </p>
-              <div
-                class="rounded-pill d-flex "
-                style=" align-items: center"
-              >
+              <div class="rounded-pill d-flex" style="align-items: center">
                 <button
                   class="border-0 bg-light rounded-start text-dark"
                   (click)="decreaseQuantity(product)"
@@ -49,22 +49,25 @@
                   +
                 </button>
               </div>
-
-
             </div>
-            <button
-            class="btn maincolor mainhover text-light"
-            (click)="deleteProduct(product?.id)"
-          >
-            Delete
-          </button>
             <!-- Error message section -->
-            <span
-              *ngIf="product.errorMessage"
-              class="text-center mx-auto w-75 mt-3"
-            >
-              {{ product.errorMessage }}
-            </span>
+            <div>
+              <span
+                *ngIf="product.errorMessage"
+                class="text-center mx-auto w-75 mt-3"
+              >
+                {{ product.errorMessage }}
+              </span>
+            </div>
+            <div class="d-flex justify-content-end align-items-end">
+              <button
+                style="width: 150px; height: 50px"
+                class="btn maincolor mainhover text-light m-5 fs-4"
+                (click)="deleteProduct(product?.id)"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -76,10 +79,8 @@
     style="float: right"
   >
     <p class="fs-5">Total Price (after discount):</p>
-    <span class="fs-3  ">${{ cartProducts | totalPrice }}</span>
+    <span class="fs-3">${{ cartProducts | totalPrice }}</span>
   </div>
-
-
 </div>
 
 <div *ngIf="cartProducts.length === 0">
