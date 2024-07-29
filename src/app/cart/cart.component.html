@@ -1,7 +1,7 @@
-<div *ngIf="cartProducts.length > 0">
+<div class=" p-5" *ngIf="cartProducts.length > 0">
   <h3 class="m-5 color">Cart</h3>
   <div *ngFor="let product of cartProducts">
-    <div class="card mb-3 mainborder mx-auto my-3" style="max-width: 700px">
+    <div class="card mb-3 mainborder mx-auto mb-5 mt-5" style="max-width: 700px">
       <div class="row g-0">
         <div class="col-md-4">
           <img
@@ -20,15 +20,15 @@
                 "
               ></p>
             </div>
-            <div class="d-flex justify-content-between">
-              <p class="card-text">
+            <div class="d-flex justify-content-evenly">
+              <p class="card-text mt-3">
                 <small class="text-dark fs-5"
                   >quentity : {{ product?.quantity }}</small
                 >
               </p>
               <div
-                class="rounded-pill"
-                style="display: flex; align-items: center"
+                class="rounded-pill d-flex "
+                style=" align-items: center"
               >
                 <button
                   class="border-0 bg-light rounded-start text-dark"
@@ -50,13 +50,14 @@
                 </button>
               </div>
 
-              <button
-                class="btn maincolor mainhover text-light"
-                (click)="deleteProduct(product?.id)"
-              >
-                Delete
-              </button>
+
             </div>
+            <button
+            class="btn maincolor mainhover text-light"
+            (click)="deleteProduct(product?.id)"
+          >
+            Delete
+          </button>
             <!-- Error message section -->
             <span
               *ngIf="product.errorMessage"
@@ -71,22 +72,24 @@
     <hr />
   </div>
   <div
-    class="mainborder text-center rounded w-25 d-flex flex-column m-5"
+    class="mainborder text-center rounded w-lg-25 w-md-25 w-sm-75 d-flex flex-column m-5 p-2"
     style="float: right"
   >
     <p class="fs-5">Total Price (after discount):</p>
-    <span class="fs-3">${{ cartProducts | totalPrice }}</span>
+    <span class="fs-3  ">${{ cartProducts | totalPrice }}</span>
   </div>
+
+
 </div>
 
 <div *ngIf="cartProducts.length === 0">
-  <div class="empty-cart-message text-center">
+  <div class="container text-center mt-5">
     <p
       style="margin: auto"
-      class="mainborder w-50 fs-3 py-2 text-center mt-5 text-dark"
+      class="mainborder w-75 w-md-50 fs-3 py-2 text-center mt-5 text-dark"
     >
       Your cart is empty!
     </p>
-    <img class="mt-5 rounded-pill" src="colored_cart_corrected.jpg" />
+    <img class="img-fluid rounded-pill mt-5" src="colored_cart_corrected.jpg" />
   </div>
 </div>

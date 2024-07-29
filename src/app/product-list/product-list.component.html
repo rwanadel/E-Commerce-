@@ -1,8 +1,9 @@
-<h2 class="m-5 color">Welcome to our shopping website .</h2>
+<h2 class="m-5 color ">Welcome to our shopping website .</h2>
 
-<div class="d-flex flex-wrap justify-content-between m-5">
+<div class="container ">
+  <div class="d-flex justify-content-between flex-wrap ">
   @for (product of products; track product.id) {
-  <div class="mb-5">
+  <div class="mb-5 " >
     <app-product-card
       [productItem]="product"
       (handleSendData)="handleReceiveData($event)"
@@ -11,4 +12,5 @@
   } @empty {
   <p>Data not found</p>
   }
+</div>
 </div>

@@ -1,61 +1,75 @@
-<div style="margin-top: 100px" class="w-25 mx-auto mainborder p-5 rounded">
-  <h2 class="color fw-bold mb-5">Login</h2>
-  <form #loginform="ngForm" (ngSubmit)="handlesubmit(loginform)">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        #email="ngModel"
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        required
-        name="email"
-        ngModel="email"
-        placeholder="enter email"
-        minlength="4"
-        [pattern]="'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'"
-      />
-      @if(email.touched && email.invalid){
-      <div class="form-text text-danger">
-        @if(email.hasError('required')){
-        <small>Required</small>
-        } @if(email.hasError('pattern')){
-        <small>in valid email</small>
+<div class="container mt-5">
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4">
+  <div style="margin-top: 80px" class="w-100 mx-auto mainborder p-5 rounded">
+    <h2 class="color fw-bold mb-5">Login</h2>
+    <form #loginform="ngForm" (ngSubmit)="handlesubmit(loginform)">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          #email="ngModel"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          required
+          name="email"
+          ngModel="email"
+          placeholder="enter email"
+          minlength="4"
+          [pattern]="'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'"
+        />
+        @if(email.touched && email.invalid){
+        <div class="form-text text-danger">
+          @if(email.hasError('required')){
+          <small>Required</small>
+          } @if(email.hasError('pattern')){
+          <small>in valid email</small>
+          }
+        </div>
         }
       </div>
-      }
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        #pass="ngModel"
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1 "
-        required
-        name="pass"
-        ngModel="pass"
-        placeholder="enter password"
-      />
-      @if(pass.touched && pass.invalid){
-      <div class="form-text text-danger">
-        @if(pass.hasError('required')){
-        <small>Required</small>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          #pass="ngModel"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1 "
+          required
+          name="pass"
+          ngModel="pass"
+          placeholder="enter password"
+        />
+        @if(pass.touched && pass.invalid){
+        <div class="form-text text-danger">
+          @if(pass.hasError('required')){
+          <small>Required</small>
+          }
+        </div>
         }
       </div>
-      }
-    </div>
 
-    <button
-      type="submit"
-      class="btn maincolor mainhover text-light"
-      [disabled]="loginform.invalid"
-    >
-      Login
-    </button>
-  </form>
+      <button
+        type="submit"
+        class="btn maincolor mainhover text-light"
+        [disabled]="loginform.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+  <div class="mx-auto w-100 text-center mt-5">
+    Don’t have account ? <a class="color" routerLink="/regester">Register</a>
+  </div>
 </div>
-<div class="mx-auto w-25 text-center mt-5">
-  Don’t have account ? <a class="color" routerLink="/regester">Register</a>
 </div>
+</div>
+
+
+
+
+
+
+
+

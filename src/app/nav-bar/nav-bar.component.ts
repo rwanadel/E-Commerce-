@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CounterService } from '../servics/counter.service';
 
+
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
@@ -11,6 +12,7 @@ import { CounterService } from '../servics/counter.service';
 })
 export class NavBarComponent {
   cartQuantity: number = 0;
+
 
   constructor(private counterService: CounterService) {}
 
