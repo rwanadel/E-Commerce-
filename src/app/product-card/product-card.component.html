@@ -43,11 +43,17 @@
         </div>
       </div>
     </div>
-    <button
-      class="btn maincolor mainhover text-light mx-4 mb-4 w-50"
-      (click)="addToCart()"
-    >
-      Add to Cart
-    </button>
+<div class="d-flex justify-content-between">
+  <button
+  class="btn maincolor mainhover text-light mx-4 mb-4 w-50"
+  (click)="addToCart()"
+>
+  Add to Cart
+</button>
+<button (click)="handleRedirect(productItem?.id)" class="btn mainborder  text-dark mx-4 mb-4 w-25">
+Details
+</button>
+</div>
+
   </div>
 </div>
